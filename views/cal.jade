@@ -1,6 +1,9 @@
 extends layout
 
 block content
+	script(type='text/javascript')
+
+
 	.span12
 		table.table.table-bordered
 			tr
@@ -11,18 +14,20 @@ block content
 				th Thurdays
 				th Friday
 				th Saturday
-				each day in days
-					if day == 0+offset || day == 7+offset || day == 14+offset || day == 21+offset || day == 28+offset
-						td
-							tr.calCell= day
-					else
-							tr.calCell= day
+			tr
+			- var count = 1;
+			each day in days
+				if (count == 8 || count == 15 || count == 22 || count == 29)
+					tr
+				td.calCell(id='cell_'+day)= day
+				- count++;
+
 	.span2
 		table.table.table-striped
 			tr
 				th Date
 				th Event
-			each date, name in events
+			each name, date in events
 				tr
+					td= month+'/'+date
 					td= name
-					td= date
