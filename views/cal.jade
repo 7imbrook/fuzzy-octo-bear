@@ -1,0 +1,28 @@
+extends layout
+
+block content
+	.span12
+		table.table.table-bordered
+			tr
+				th Sunday
+				th Monday
+				th Tuesday
+				th Wednesday
+				th Thurdays
+				th Friday
+				th Saturday
+				each day in days
+					if day == 0+offset || day == 7+offset || day == 14+offset || day == 21+offset || day == 28+offset
+						td
+							tr.calCell= day
+					else
+							tr.calCell= day
+	.span2
+		table.table.table-striped
+			tr
+				th Date
+				th Event
+			each date, name in events
+				tr
+					td= name
+					td= date
