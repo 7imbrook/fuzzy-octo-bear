@@ -11,6 +11,7 @@ exports.gtv = function(req, res){
 
 	var offset = 2;				//Sunday is 1, Monday is 2 etc...
 	var daysinmounth = 31;		//Number of days in the month
+	var month = 'October'		//The Month
 	var arrayD = {};
 	var daycounter = 1;	
 	for(var x = 1; x<=35; x++){
@@ -25,7 +26,7 @@ exports.gtv = function(req, res){
 	res.render('cal', {
 		title: 'for Google TV',
 		days: arrayD,
-		month: 10,
+		month: month,
 		events: {
 			0: {
 				name: 'FC Talk: SG',
@@ -74,6 +75,12 @@ exports.gtv = function(req, res){
 				dateTime: 'Fri Oct 26 2012 13:00:00 GMT-0400 (EDT)',
 				location: 'SSE Lab',
 				info: 'Best day ever'
+			},
+			8: {
+				name: 'Test Event',
+				dateTime: 'Mon Oct 08 2012 11:07:00 GMT-0400 (EDT)',
+				location: 'In space',
+				info: 'A test event :D'
 			}
 		}
 	});
