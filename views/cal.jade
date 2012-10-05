@@ -3,13 +3,13 @@ extends layout
 block content
 	- eventsByDate = {};
 	- var d;
-	- for(var i in events)
-		-	d = new Date(events[i].dateTime)
-		-	events[i].id = i;
-		-	events[i].dateTime = d;
+	- for(var i in urlEvents)
+		-	d = new Date(urlEvents[i].start_date)
+		-	urlEvents[i].id = i;
+		-	urlEvents[i].start_date = d;
 		-	if(!eventsByDate.hasOwnProperty(d.getDate()))
 			-	eventsByDate[d.getDate()] = [];
-		-	eventsByDate[d.getDate()].push(events[i]);
+		-	eventsByDate[d.getDate()].push(urlEvents[i]);
 	.row	
 		.span16
 			table.table.table-bordered
@@ -44,7 +44,7 @@ block content
 					- count++;
 
 		.span9
-			h1= month+' - Events'
+			h1= month
 			table.table.table-striped(id='eventList')
 				tr
 					th Date
@@ -55,7 +55,7 @@ block content
 				each events, day in eventsByDate
 					each event in events
 						tr
-							- var date = new Date(event.dateTime);
+							- var date = new Date(event.start_date);
 							- var time = date.getHours();
 							- var min = date.getMinutes().toString();
 							- var ampm = 'AM';
@@ -65,5 +65,5 @@ block content
 							td= event.name
 							td= time+":"+min+ampm
 							td= event.location
-							td= event.info
+							td= event.short_description
 	include marquee
