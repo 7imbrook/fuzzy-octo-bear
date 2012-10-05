@@ -27,36 +27,52 @@ exports.gtv = function(req, res){
 		days: arrayD,
 		month: 10,
 		events: {
-			'Event': {
-				dateTime: 'Thu Oct 04 2012 19:30:00 GMT-0400 (EDT)',
-				info: 'Event information'
+			0: {
+				name: 'FC Talk: SG',
+				dateTime: 'Thu Oct 04 2012 19:00:00 GMT-0400 (EDT)',
+				location: 'SSE Lab',
+				info: 'Talk on Student Government'
 			},
-			'Second Event': {
-				dateTime: 'Tue Oct 09 2012 20:00:00 GMT-0400 (EDT)',
-				info: 'More event information'
+			1: {
+				name: 'Tech Talk: Python Pkg Mgmt',
+				dateTime: 'Thu Oct 11 2012 19:00:00 GMT-0400 (EDT)',
+				location: 'SSE Lab',
+				info: 'Python Package Manager'
 			},
-			'Third Event': {
-				dateTime: 'Thu Oct 18 2012 19:00:00 GMT-0400 (EDT)',
-				info: 'INFORMATION'
+			2: {
+				name: 'Freshman Connection Talk: Getting co-ops',
+				dateTime: 'Thu Oct 23 2012 19:00:00 GMT-0400 (EDT)',
+				location: 'SSE Lab',
+				info: 'Derek Erdmann has finished co-ops at MITRE and Microsoft. He’ll tell you about ways you can prep for co-op even in your first year.'
 			},
-			'Birthday': {
+			3: {
+				name: 'Birthday',
 				dateTime: 'Fri Oct 26 2012 02:45:42 GMT-0400 (EDT)',
+				location: 'SSE Lab',
 				info: 'Best day ever'
 			},
-			'SSE Meeting1': {
+			4: {
+				name: 'SSE Meeting',
 				dateTime: 'Fri Oct 05 2012 13:00:00 GMT-0400 (EDT)',
+				location: 'SSE Lab',
 				info: 'Event information'
 			},
-			'SSE Meeting2': {
+			5: {
+				name: 'SSE Meeting',
 				dateTime: 'Fri Oct 12 2012 13:00:00 GMT-0400 (EDT)',
+				location: 'SSE Lab',
 				info: 'More event information'
 			},
-			'SSE Meeting3': {
+			6: {
+				name: 'SSE Meeting',
 				dateTime: 'Fri Oct 19 2012 13:00:00 GMT-0400 (EDT)',
+				location: 'SSE Lab',
 				info: 'INFORMATION'
 			},
-			'SSE Meeting4': {
+			7: {
+				name: 'SSE Meeting',
 				dateTime: 'Fri Oct 26 2012 13:00:00 GMT-0400 (EDT)',
+				location: 'SSE Lab',
 				info: 'Best day ever'
 			}
 		}

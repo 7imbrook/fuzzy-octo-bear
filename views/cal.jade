@@ -5,7 +5,7 @@ block content
 	- var d;
 	- for(var i in events)
 		-	d = new Date(events[i].dateTime)
-		-	events[i].name = i;
+		-	events[i].id = i;
 		-	events[i].dateTime = d;
 		-	if(!eventsByDate.hasOwnProperty(d.getDate()))
 			-	eventsByDate[d.getDate()] = [];
@@ -38,10 +38,15 @@ block content
 			tr
 				th Date
 				th Event
+				th Time
+				th Location
 				th Description
 			each events, day in eventsByDate
 				each event in events
 					tr
-						td(width='140px') Coming Soon
+						- var date = new Date(event.dateTime);
+						td(width='40px')= (date.getMonth()+1)+"/"+date.getDate()
 						td= event.name
+						td 7:00PM
+						td SSE Lab 1670
 						td= event.info
