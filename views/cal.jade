@@ -1,10 +1,16 @@
 extends layout
 
 block content
-	script(type='text/javascript')
-
-
-	.span12
+	- eventsByDate = {};
+	- var d;
+	- for(var i in events)
+		-	d = new Date(events[i].dateTime)
+		-	events[i].name = i;
+		-	events[i].dateTime = d;
+		-	if(!eventsByDate.hasOwnProperty(d.getDate()))
+			-	eventsByDate[d.getDate()] = [];
+		-	eventsByDate[d.getDate()].push(events[i]);
+	.span16
 		table.table.table-bordered
 			tr
 				th Sunday
@@ -20,14 +26,22 @@ block content
 				if (count == 8 || count == 15 || count == 22 || count == 29)
 					tr
 				td.calCell(id='cell_'+day)= day
+					if(eventsByDate.hasOwnProperty(day))
+						each event in eventsByDate[day]
+							br
+							= event.name
+
 				- count++;
 
-	.span2
-		table.table.table-striped
+	.span9
+		table.table.table-striped(id='eventList')
 			tr
 				th Date
 				th Event
-			each name, date in events
-				tr
-					td= month+'/'+date
-					td= name
+				th Description
+			each events, day in eventsByDate
+				each event in events
+					tr
+						td(width='140px') Coming Soon
+						td= event.name
+						td= event.info
