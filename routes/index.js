@@ -29,7 +29,6 @@ exports.gtv = function(req, res){
 
 	// Get current event data 
 	var requestURL = ("/events.json?start_date=20"+year+"-"+month+"-1&end_date=20"+year+"-"+month+"-"+daysinmonth);
-	console.log(requestURL);
 	https = require('https');
 
 	var options = {
